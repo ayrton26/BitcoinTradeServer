@@ -1,4 +1,4 @@
-package br.unicap.fullstack.config;
+package br.bitcoinsolutions.server.config;
 
 import javax.ws.rs.ApplicationPath;
 import javax.ws.rs.core.Application;

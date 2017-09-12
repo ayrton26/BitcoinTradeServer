@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.unicap.fullstack.model;
+package br.bitcoinsolutions.server.model;
 
 import java.io.Serializable;
 
@@ -11,19 +11,19 @@ import java.io.Serializable;
  *
  * @author tj
  */
-public class Desenvolvedor implements Serializable {
+public class Score implements Serializable {
     
     private int id;
-    private String nome;
-    private float salario;
+    private Usuario usuario;
+    private int pontos;
 
-    public Desenvolvedor() {
+    public Score() {
     }
-    
-    public Desenvolvedor(int id, String nome, float salario) {
+
+    public Score(int id, Usuario usuario, int pontos) {
         this.id = id;
-        this.nome = nome;
-        this.salario = salario;
+        this.usuario = usuario;
+        this.pontos = pontos;
     }
 
     public int getId() {
@@ -34,20 +34,20 @@ public class Desenvolvedor implements Serializable {
         this.id = id;
     }
 
-    public String getNome() {
-        return nome;
+    public Usuario getUsuario() {
+        return usuario;
     }
 
-    public void setNome(String nome) {
-        this.nome = nome;
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 
-    public float getSalario() {
-        return salario;
+    public int getPontos() {
+        return pontos;
     }
 
-    public void setSalario(float salario) {
-        this.salario = salario;
+    public void setPontos(int pontos) {
+        this.pontos = pontos;
     }
     
     

@@ -3,10 +3,10 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package br.unicap.fullstack.endpoint;
+package br.bitcoinsolutions.server.endpoint;
 
-import br.unicap.fullstack.model.Desenvolvedor;
-import br.unicap.fullstack.service.DesenvolvedorService;
+import br.bitcoinsolutions.server.model.Score;
+import br.bitcoinsolutions.server.service.ScoreService;
 import java.util.List;
 import javax.inject.Inject;
 import javax.ws.rs.Consumes;
@@ -21,11 +21,11 @@ import javax.ws.rs.core.Response;
  *
  * @author Tj
  */
-@Path("/hello")
-public class DesenvolvedorEndPoint {
+@Path("/score")
+public class ScoreEndPoint {
 
     @Inject
-    DesenvolvedorService service;
+    ScoreService service;
     
     
     @GET
@@ -38,30 +38,28 @@ public class DesenvolvedorEndPoint {
     
     @GET
     @Produces("application/json")
-    public List<Desenvolvedor> list() throws Exception {
+    public List<Score> list() throws Exception {
         return service.list();
     }
     
     @PUT
     @Consumes("application/json")
-    public Response add(Desenvolvedor desenv) {
-        service.insert(desenv);
+    public Response add(Score score) {
+        service.insert(score);
         return Response.ok().build();
     }
    
     @POST
     @Consumes("application/json")
-    public Response update(Desenvolvedor desenv) {
-        if(desenv.getNome()==null || desenv.getNome().isEmpty()) 
-            return Response.serverError().build();
-        service.update(desenv);
+    public Response update(Score score) {
+        service.update(score);
         return Response.ok().build();
     }
     
     @DELETE
     @Consumes("application/json")
-    public Response delete(Desenvolvedor desenv) {
-        service.delete(desenv);
+    public Response delete(Score score) {
+        service.delete(score);
         return Response.ok().build();
     }
    
