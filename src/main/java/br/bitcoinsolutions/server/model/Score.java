@@ -17,8 +17,7 @@ public class Score implements Serializable {
     private Usuario usuario;
     private int pontos;
 
-    public Score() {
-    }
+    public Score() { }
 
     public Score(int id, Usuario usuario, int pontos) {
         this.id = id;
