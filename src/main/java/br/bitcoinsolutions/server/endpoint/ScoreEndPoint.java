@@ -49,12 +49,6 @@ public class ScoreEndPoint {
         return Response.ok().build();
     }
    
-    @POST
-    @Consumes("application/json")
-    public Response update(Score score) {
-        service.update(score);
-        return Response.ok().build();
-    }
     
     @DELETE
     @Consumes("application/json")
