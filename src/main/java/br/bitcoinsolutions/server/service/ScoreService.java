@@ -29,6 +29,13 @@ public class ScoreService extends GenericDAO<Score>{
         insert( new Score(3, u3,5000) );
         
     }
-    
+public void salvar(Score score){
+   Score old = get(score);
+   
+   
+   if (old == null || score.getPontos() > old.getPontos()){
+       this.update(score);
+   }
+}    
     
 }

@@ -36,8 +36,8 @@ public class GenericDAO<T>{
         this.list.remove(d.hashCode());
     }
     
-    public void get(T d){
-        this.list.get(d.hashCode());
+    public T get(T d){
+        return this.list.get(d.hashCode());
     }
     public List<T> list(){
         return new ArrayList<>(this.list.values());
