@@ -45,7 +45,7 @@ public class ScoreEndPoint {
     @PUT
     @Consumes("application/json")
     public Response add(Score score) {
-        service.insert(score);
+        service.salvar(score);
         return Response.ok().build();
     }
    
