@@ -13,7 +13,7 @@ import java.util.Comparator;
  */
 public class ScoreDescendentComparator implements Comparator<Score>{
     public int compare(Score left, Score right){
-        return left.getPontos() - right.getPontos();
+        return right.getPontos() - left.getPontos();
     }
     
 }
