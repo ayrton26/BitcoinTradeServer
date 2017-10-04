@@ -6,8 +6,11 @@
 package br.bitcoinsolutions.server.service;
 
 import br.bitcoinsolutions.server.model.Score;
+import br.bitcoinsolutions.server.model.ScoreDescendentComparator;
 import br.bitcoinsolutions.server.model.Usuario;
 import br.bitcoinsolutions.server.persistence.GenericDAO;
+import java.util.Collections;
+import java.util.List;
 import javax.ejb.Stateless;
 
 
@@ -35,7 +38,12 @@ public void salvar(Score score){
    
    if (old == null || score.getPontos() > old.getPontos()){
        this.update(score);
+       
    }
 }    
-    
+public List<Score> list(){
+    List<Score> retorno = super.list();
+    Collections.sort(retorno, new ScoreDescendentComparator());
+    return retorno;
+}
 }
